@@ -6,7 +6,7 @@
     "description": "This task is usefull when you have your artifacts stored in azure blob storage for long retension",
     "helpMarkDown": "Version: 1.0.0",
     "category": "Deploy",
-    "author": "Emtec Inc",
+    "author": "Abhishek Anvekar",
     "version": {
         "Major": 1,
         "Minor": 0,
@@ -17,6 +17,13 @@
         "Release"
     ],
     "instanceNameFormat": "Azure Pull Artifact task",
+    "groups": [
+        {
+            "name": "advanced",
+            "displayName": "Advanced",
+            "isExpanded": false
+        }
+    ],
     "inputs": [
         {
             "name": "samplestring",
@@ -28,8 +35,13 @@
         }
     ],
     "execution": {
-        "Node10": {
-            "target": "index.js"
+        "PowerShell3": {
+            "target": "powershell.ps1",
+            "platforms": [
+                "windows"
+            ],
+            "workingDirectory": "$(currentDirectory)"
         }
     }
 }
+
